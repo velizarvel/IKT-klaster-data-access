@@ -22,6 +22,6 @@ public interface UserRepository extends CrudRepository<UserEntity, Integer>{
 	//Drugi nacin kada se napravi sopstveni query
 	
 	@Query("SELECT u FROM UserEntity u WHERE name LIKE :firstLetter%")
-	public List<UserEntity> findAllByFirstLetter(@Param("firstLetter")String firstLetter);
+	public List<UserEntity> findAllByFirstLetterOfName(@Param("firstLetter")String firstLetter);
 
 }

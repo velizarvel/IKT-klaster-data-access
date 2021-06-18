@@ -29,6 +29,8 @@ public class UserEntity {
 	@Column(length = 13)
 	private String jmbg;
 
+	private Double troskovi;
+
 	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "address")
 	private AddressEntity address;
@@ -38,7 +40,7 @@ public class UserEntity {
 	}
 
 	public UserEntity(String name, String email, String telephoneNumber, LocalDate dateOfBirth, Long idCard,
-			String jmbg, AddressEntity address) {
+			String jmbg, AddressEntity address, Double troskovi) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -47,6 +49,7 @@ public class UserEntity {
 		this.idCard = idCard;
 		this.jmbg = jmbg;
 		this.address = address;
+		this.troskovi = troskovi;
 	}
 
 	public Integer getId() {
@@ -113,8 +116,12 @@ public class UserEntity {
 		this.address = address;
 	}
 
+	public Double getTroskovi() {
+		return troskovi;
+	}
 
-	
-
+	public void setTroskovi(Double troskovi) {
+		this.troskovi = troskovi;
+	}
 
 }

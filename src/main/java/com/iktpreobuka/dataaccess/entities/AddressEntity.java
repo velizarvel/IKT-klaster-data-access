@@ -93,6 +93,13 @@ public class AddressEntity {
 	public void setUsers(List<UserEntity> users) {
 		this.users = users;
 	}
+
+	@Override
+	public String toString() {
+		return id + ", " + street + ", " + city + ", " + country + ",";
+	}
+	
+	
 	
 	
 }
